@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>You 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  padding:40px 0;
+  font-family:Georgia, serif;
+  background:linear-gradient(180deg,#ffd6dc,#ffb0b0);
+}
+.card{
+  max-width:720px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  border-radius:26px;
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
+}
+h1{text-align:center;}
+p{line-height:1.6;}
+button{
+  margin-top:30px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#e75480;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+.heart{
+  position:absolute;
+  color:#e75480;
+  font-size:26px;
+  animation:float 4s linear forwards;
+}
+@keyframes float{
+  from{transform:translateY(100vh);opacity:1;}
+  to{transform:translateY(-10vh);opacity:0;}
+}
+</style>
+</head>
+<body onload="launchHearts()">
+
+<div class="card">
+<h1>For Tannu 💖</h1>
+
+<p>
+I’ve thought a lot about how to say this, and I realised something simple.
+Some things don’t need to be made dramatic to be deeply true.
+</p>
+
+<p>
+Having you in my life feels like the biggest blessing I didn’t know I needed.
+Not because everything suddenly becomes perfect, but because everything feels
+lighter, warmer, and more meaningful with you around.
+</p>
+
+<p>
+You bring this quiet kind of happiness into my life.
+The kind that shows up in smiles I don’t even realise I’m wearing.
+The kind that makes tough days softer and good days even better,
+just by being shared with you.
+</p>
+
+<p>
+I love how being with you feels easy.
+How I can be myself without overthinking.
+How you make me want to grow, not out of pressure,
+but because I genuinely feel supported and understood.
+</p>
+
+<p>
+I don’t take us lightly.
+I don’t take <em>you</em> lightly.
+</p>
+
+<p>
+So when I ask you to be my Valentine, it’s not about a date on the calendar.
+It’s about choosing you — happily, confidently, and with a full heart.
+Because you’re not just someone I care about…
+you’re someone I’m genuinely grateful to have in my life.
+</p>
+
+<p><strong>And that, to me, means everything.</strong></p>
+
+<div style="text-align:center;">
+<button onclick="location.href='memories.html'">
+Come see something I saved for us →
+</button>
+</div>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+function launchHearts(){
+  const c=document.getElementById('hearts');
+  for(let i=0;i<30;i++){
+    let h=document.createElement('div');
+    h.className='heart';
+    h.innerHTML='❤';
+    h.style.left=Math.random()*100+'vw';
+    c.appendChild(h);
+    setTimeout(()=>h.remove(),4000);
+  }
+}
+</script>
+
+</body>
+</html>
