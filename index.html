@@ -1,223 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>For Tannu 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background: #ffb0b0;
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia, serif;
+  background:linear-gradient(180deg,#ffb0b0,#ffd6dc);
 }
-
-.card {
-  background: white;
-  width: 90%;
-  max-width: 700px;
-  padding: 30px;
-  border-radius: 22px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  text-align: center;
+.card{
+  background:white;
+  padding:40px;
+  border-radius:24px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.2);
 }
-
-.hidden {
-  display: none;
+button{
+  padding:14px 28px;
+  border-radius:30px;
+  border:none;
+  font-size:17px;
+  margin:10px;
+  cursor:pointer;
 }
-
-h1, h2 {
-  margin-top: 0;
-}
-
-button {
-  padding: 14px 26px;
-  margin: 12px;
-  border: none;
-  border-radius: 30px;
-  font-size: 17px;
-  cursor: pointer;
-}
-
-.yes {
-  background: #e75480;
-  color: white;
-}
-
-.no {
-  background: #ddd;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.gallery-item {
-  text-align: left;
-}
-
-.gallery img, video {
-  width: 100%;
-  border-radius: 14px;
-}
-
-.caption {
-  font-size: 14px;
-  margin-top: 6px;
-  color: #444;
-}
-
-.hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.heart {
-  position: absolute;
-  color: #e75480;
-  font-size: 24px;
-  animation: floatUp 4s linear forwards;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(100vh); opacity: 1; }
-  to { transform: translateY(-10vh); opacity: 0; }
-}
-
-.section {
-  margin-top: 40px;
-}
+.yes{background:#e75480;color:white;}
+.no{background:#eee;}
+#noMsg{display:none;margin-top:10px;}
 </style>
 </head>
-
 <body>
 
-<div class="card" id="page1">
+<div class="card">
   <h1>Tannu 💖</h1>
-  <p>Okay… serious question.<br><br>
-     Will you be my Valentine?</p>
+  <p>Okay… serious question.</p>
+  <p><strong>Will you be my Valentine?</strong></p>
 
-  <button class="yes" onclick="yesClicked()">YES 💖</button>
-  <button class="no" onclick="noClicked()">NO 🙃</button>
+  <button class="yes" onclick="location.href='yes.html'">YES 💖</button>
+  <button class="no" onclick="document.getElementById('noMsg').style.display='block'">NO 🙃</button>
 
-  <p id="noMsg" class="hidden">Nice try 😌 That’s not a valid option.</p>
+  <p id="noMsg">Nice try 😌</p>
 </div>
-
-<div class="card hidden" id="page2">
-
-  <h1>You said yes 🥰</h1>
-
-  <p>
-    With you, even boring low days feel special.<br><br>
-    I love how calm it feels with you.<br>
-    How easy it is to just be myself.<br>
-    And how, somehow, ordinary moments feel warmer when you’re in them.<br><br>
-    In my head, this part has a soft background score.
-  </p>
-
-  <!-- MEMORY SECTION -->
-  <div class="section">
-    <h2>Some of my favourite moments with you</h2>
-
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="image1.jpg">
-        <div class="caption">One of those moments where everything felt just right.</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="image2.jpg">
-        <div class="caption">I remember smiling more than usual that day.</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="image3.jpg">
-        <div class="caption">Comfort, laughter, and us being us.</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="image4.jpg">
-        <div class="caption">This one still makes me pause for a second.</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="image5.jpg">
-        <div class="caption">Proof that my favourite place is next to you.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VIDEO -->
-  <div class="section">
-    <h2>A little moment I like revisiting</h2>
-    <video controls>
-      <source src="20251115110656.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- WHY I CHOOSE YOU -->
-  <div class="section">
-    <h2>Why I choose you</h2>
-    <p>
-      You make things feel easy.<br>
-      You feel like comfort and adventure at the same time.<br>
-      I like who I am when I’m with you.<br>
-      And I really, really like us.
-    </p>
-  </div>
-
-  <!-- TINY PROMISES -->
-  <div class="section">
-    <h2>Tiny promises</h2>
-    <p>
-      More laughs.<br>
-      More random hugs.<br>
-      More choosing you — every time.
-    </p>
-  </div>
-
-</div>
-
-<div class="hearts" id="hearts"></div>
-
-<script>
-function noClicked() {
-  document.getElementById("noMsg").classList.remove("hidden");
-}
-
-function yesClicked() {
-  document.getElementById("page1").classList.add("hidden");
-  document.getElementById("page2").classList.remove("hidden");
-  launchHearts();
-}
-
-function launchHearts() {
-  const container = document.getElementById("hearts");
-  for (let i = 0; i < 25; i++) {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
-    container.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 4000);
-  }
-}
-</script>
 
 </body>
 </html>
