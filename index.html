@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: #ffb0b0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 600px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #e75480;
+      color: white;
+    }
+
+    .no {
+      background: #ddd;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card" id="page1">
+  <h1>Tannu 💖</h1>
+  <p>Serious question.<br>Will you be my Valentine?</p>
+
+  <button class="yes" onclick="yesClicked()">YES 💖</button>
+  <button class="no" onclick="noClicked()">NO 🙃</button>
+
+  <p id="noMsg" class="hidden">Nice try 😌 That’s not a valid option.</p>
+</div>
+
+<div class="card hidden" id="page2">
+  <h1>You said yes 🥰</h1>
+
+  <p>
+    With you, even boring low days feel special.<br><br>
+    I love how easy this feels.<br>
+    How calm it is with you.<br>
+    And how I don’t have to pretend around you.<br><br>
+    In my head, this part has a soft background score.
+  </p>
+
+  <h2>Some of my favourite moments with you</h2>
+
+  <!-- ADD YOUR IMAGES BELOW -->
+  <!-- Upload images to repo and update names here -->
+
+  <img src="image1.jpg">
+  <img src="image2.jpg">
+  <img src="image3.jpg">
+
+</div>
+
+<script>
+  function noClicked() {
+    document.getElementById("noMsg").classList.remove("hidden");
+  }
+
+  function yesClicked() {
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
